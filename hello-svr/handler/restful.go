@@ -1,0 +1,49 @@
+package handler
+
+import (
+	"github.com/dapr/go-sdk/service/common"
+)
+
+// 用来处理验证 restful 接口
+type Restful struct {
+}
+
+// @Summary Restful-Get
+// @Description Restful-Get
+// @Tags 测试接口
+// @Success 0 {object} response.Response "{"code": 200, "data": [...]}"
+// @Router /restful/get [get]
+// @Security
+func (c *Restful) Get(in *common.InvocationEvent) string {
+	return "get"
+}
+
+// @Summary Restful-Post
+// @Description Restful-Post
+// @Tags 测试接口
+// @Success 0 {object} response.Response "{"code": 200, "data": [...]}"
+// @Router /restful/post [post]
+// @Security
+func (c *Restful) Post(in *common.InvocationEvent) string {
+	return "post"
+}
+
+// @Summary Restful-Put
+// @Description Restful-Put
+// @Tags 测试接口
+// @Success 0 {object} response.Response "{"code": 200, "data": [...]}"
+// @Router /restful/put [put]
+// @Security
+func (c *Restful) Put(in *common.InvocationEvent) string {
+	return "put"
+}
+
+// @Summary Restful-Delete
+// @Description Restful-Delete
+// @Tags 测试接口
+// @Success 0 {object} response.Response "{"code": 200, "data": [...]}"
+// @Router /restful/delete [delete]
+// @Security
+func (c *Restful) Delete(in *common.InvocationEvent) string {
+	return "delete"
+}

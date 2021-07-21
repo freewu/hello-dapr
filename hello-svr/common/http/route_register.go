@@ -21,46 +21,44 @@ func NewRouteRegister(service dapr.Service) *RouteRegister {
 	}
 }
 
-func(r *RouteRegister) GET(path string, object interface{}) {
+func(r *RouteRegister) GET(path string, object interface{}) error {
+	return r.register("GET",path,object)
+}
+
+func(r *RouteRegister) PUT(path string, object interface{}) error {
+	return r.register("PUT",path,object)
+}
+
+func(r *RouteRegister) POST(path string, object interface{}) error {
+	return r.register("POST",path,object)
+}
+
+func(r *RouteRegister) DELETE(path string, object interface{}) error{
+	return r.register("DELETE",path,object)
+}
+
+func(r *RouteRegister) HEAD(path string, object interface{}) error{
+	return r.register("HEAD",path,object)
+}
+
+func(r *RouteRegister) OPTION(path string, object interface{}) error{
+	return r.register("OPTION",path,object)
+}
+
+// 提供不同方法的注册处理
+func(r *RouteRegister) register(method string,path string, object interface{}) (err error) {
 	// 匿名函数处理
-	err := r.Service.AddServiceInvocationHandler(path, func(ctx context.Context, in *dapr.InvocationEvent) (out *dapr.Content, err error) {
-		return r.handle("GET",object,ctx,in)
+	err = r.Service.AddServiceInvocationHandler(path, func(ctx context.Context, in *dapr.InvocationEvent) (out *dapr.Content, err error) {
+		return r.handle(method,object,ctx,in)
 	})
 	if err != nil {
 		log.Fatalf("error adding invocation handler: %v", err)
+		return err
 	}
+	return err
 }
 
-func(r *RouteRegister) PUT(path string, object interface{}) {
-	// 匿名函数处理
-	err := r.Service.AddServiceInvocationHandler(path, func(ctx context.Context, in *dapr.InvocationEvent) (out *dapr.Content, err error) {
-		return r.handle("PUT",object,ctx,in)
-	})
-	if err != nil {
-		log.Fatalf("error adding invocation handler: %v", err)
-	}
-}
-
-func(r *RouteRegister) POST(path string, object interface{}) {
-	// 匿名函数处理
-	err := r.Service.AddServiceInvocationHandler(path, func(ctx context.Context, in *dapr.InvocationEvent) (out *dapr.Content, err error) {
-		return r.handle("POST",object,ctx,in)
-	})
-	if err != nil {
-		log.Fatalf("error adding invocation handler: %v", err)
-	}
-}
-
-func(r *RouteRegister) DELETE(path string, object interface{}) {
-	// 匿名函数处理
-	err := r.Service.AddServiceInvocationHandler(path, func(ctx context.Context, in *dapr.InvocationEvent) (out *dapr.Content, err error) {
-		return r.handle("DELETE",object,ctx,in)
-	})
-	if err != nil {
-		log.Fatalf("error adding invocation handler: %v", err)
-	}
-}
-
+// 处理 dapr 注册流程 & 响应业务方法
 func(r *RouteRegister) handle(method string,object interface{},ctx context.Context, in *dapr.InvocationEvent) (out *dapr.Content, err error) {
 	if in == nil {
 		return nil, errors.New("invocation parameter required")
