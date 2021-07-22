@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/dapr/go-sdk/service/common"
+	"demo/hello-svr/common/http"
 )
 
 // 用来处理验证 restful 接口
@@ -14,7 +14,7 @@ type Restful struct {
 // @Success 0 {object} response.Response "{"code": 200, "data": [...]}"
 // @Router /restful/get [get]
 // @Security
-func (c *Restful) Get(in *common.InvocationEvent) string {
+func (c *Restful) Get(request *http.Request) string {
 	return "get"
 }
 
@@ -24,7 +24,7 @@ func (c *Restful) Get(in *common.InvocationEvent) string {
 // @Success 0 {object} response.Response "{"code": 200, "data": [...]}"
 // @Router /restful/post [post]
 // @Security
-func (c *Restful) Post(in *common.InvocationEvent) string {
+func (c *Restful) Post(request *http.Request) string {
 	return "post"
 }
 
@@ -34,7 +34,7 @@ func (c *Restful) Post(in *common.InvocationEvent) string {
 // @Success 0 {object} response.Response "{"code": 200, "data": [...]}"
 // @Router /restful/put [put]
 // @Security
-func (c *Restful) Put(in *common.InvocationEvent) string {
+func (c *Restful) Put(request *http.Request) string {
 	return "put"
 }
 
@@ -44,6 +44,6 @@ func (c *Restful) Put(in *common.InvocationEvent) string {
 // @Success 0 {object} response.Response "{"code": 200, "data": [...]}"
 // @Router /restful/delete [delete]
 // @Security
-func (c *Restful) Delete(in *common.InvocationEvent) string {
+func (c *Restful) Delete(request *http.Request) string {
 	return "delete"
 }

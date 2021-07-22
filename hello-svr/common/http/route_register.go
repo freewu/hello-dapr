@@ -74,7 +74,8 @@ func(r *RouteRegister) handle(method string,object interface{},ctx context.Conte
 	}
 	// 执行传入方法
 	params := make([]reflect.Value,1)  //参数
-	params[0] = reflect.ValueOf(in)
+	request := NewRequest(ctx, in) // 请求体
+	params[0] = reflect.ValueOf(request)
 	re := function.Call(params)
 
 	var bytes []byte

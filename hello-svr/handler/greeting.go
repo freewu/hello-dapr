@@ -1,8 +1,7 @@
 package handler
 
 import (
-	//"encoding/json"
-	"github.com/dapr/go-sdk/service/common"
+	"demo/hello-svr/common/http"
 	log "github.com/sirupsen/logrus"
 )
 
@@ -15,7 +14,7 @@ type Greeting struct {
 // @Success 0 {object} response.Response "{"code": 200, "data": [...]}"
 // @Router /greeting/hello [get]
 // @Security
-func (c *Greeting) Hello(in *common.InvocationEvent) interface{} {
+func (c *Greeting) Hello(request *http.Request) interface{} {
 	log.Print("Greeting Hello")
 	aaa := make(map[string]interface{})
 	aaa["string"] = "Hello"
