@@ -24,7 +24,13 @@ func InitHttp(s dapr.Service) (err error) {
 	err = register.GET("restful/get", rest.Get)
 	err = register.POST("restful/post", rest.Post)
 	err = register.PUT("restful/put", rest.Put)
-	err = register.PUT("restful/delete", rest.Delete)
+	err = register.DELETE("restful/delete", rest.Delete)
+
+	// params
+	params := &Params{}
+	err = register.GET("params/get", params.Get)
+	err = register.POST("params/body", params.Body)
+	err = register.POST("params/form", params.Form)
 
 	return err
 }

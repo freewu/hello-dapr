@@ -1,0 +1,28 @@
+### restful-get
+GET http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/restful/get
+
+### restful-put
+PUT http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/restful/put
+content-type: application/json
+
+{
+
+}
+
+### restful-post
+POST http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/restful/post
+content-type: application/json
+
+{
+
+}
+
+### restful-delete
+DELETE http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/restful/delete
+content-type: application/json
+
+{
+
+}
+
+###

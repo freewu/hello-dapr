@@ -1,0 +1,11 @@
+### hello
+GET http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/hello
+
+### 修改信息
+PUT http://{{host}}/v1.0/invoke/demo-service/method/robot
+content-type: application/json
+
+{
+  "id":1,
+  "age":2
+}
