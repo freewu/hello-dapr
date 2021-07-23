@@ -1,11 +1,11 @@
 ### QueryString Params
-GET http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/params/get?name=bluefrog&age=14
+GET http://127.0.0.1:9101/v1.0/invoke/demo-hello-srv/method/params/get?name=bluefrog&age=14
 
 ### QueryString Params miss some params
-GET http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/params/get?name=bluefrog
+GET http://127.0.0.1:9101/v1.0/invoke/demo-hello-srv/method/params/get?name=bluefrog
 
 ### body-post
-POST http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/params/body
+POST http://127.0.0.1:9101/v1.0/invoke/demo-hello-srv/method/params/body
 content-type: application/json
 
 {
@@ -14,7 +14,7 @@ content-type: application/json
 }
 
 ### body-post
-POST http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/params/body
+POST http://127.0.0.1:9101/v1.0/invoke/demo-hello-srv/method/params/body
 content-type: application/json
 
 {
@@ -23,7 +23,7 @@ content-type: application/json
 }
 
 ### body-post
-POST http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/params/body
+POST http://127.0.0.1:9101/v1.0/invoke/demo-hello-srv/method/params/body
 content-type: application/json
 
 {
@@ -31,7 +31,7 @@ content-type: application/json
 }
 
 ### body-post
-POST http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/params/body
+POST http://127.0.0.1:9101/v1.0/invoke/demo-hello-srv/method/params/body
 content-type: application/json
 
 {
@@ -39,7 +39,7 @@ content-type: application/json
 }
 
 ### form-post
-POST http://192.168.150.129:9101/v1.0/invoke/demo-hello-srv/method/params/form
+POST http://127.0.0.1:9101/v1.0/invoke/demo-hello-srv/method/params/form
 content-type: application/form
 
 name=bluefrog&age=12

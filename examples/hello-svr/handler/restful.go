@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"demo/hello-svr/common/http"
+	"github.com/freewu/hello-dapr/common/http"
 )
 
 // 用来处理验证 restful 接口

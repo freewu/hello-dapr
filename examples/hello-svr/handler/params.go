@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"demo/hello-svr/common/http"
-	"demo/hello-svr/common/response"
+	"github.com/freewu/hello-dapr/common/http"
+	"github.com/freewu/hello-dapr/common/response"
 	"demo/hello-svr/model"
 )
 

@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"demo/hello-svr/common/http"
+	"github.com/freewu/hello-dapr/common/http"
 	dapr "github.com/dapr/go-sdk/service/common"
 	log "github.com/sirupsen/logrus"
 )

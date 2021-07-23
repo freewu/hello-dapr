@@ -6,7 +6,7 @@
 ## 启动服务
 ```bash
 git clone https://github.com/freewu/hello-dapr.git
-cd hello-dapr/hello-svr
+cd exmaples/hello-dapr/hello-svr
 make start
 ```
 
