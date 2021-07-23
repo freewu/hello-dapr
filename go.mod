@@ -1,4 +1,4 @@
-module hello-dapr
+module github.com/freewu/hello-dapr
 
 go 1.15
 
