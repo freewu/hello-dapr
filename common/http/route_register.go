@@ -72,7 +72,7 @@ func(r *RouteRegister) handle(methods []string,object interface{},ctx context.Co
 		return nil, errors.New("invocation parameter required")
 	}
 	//if in.Verb != method {
-	if methodContain(methods,in.Verb) {
+	if !methodContain(methods,in.Verb) {
 		return nil, fmt.Errorf("no such request type, please use %v Request", methods)
 	}
 	// 真正的业务逻辑实现
